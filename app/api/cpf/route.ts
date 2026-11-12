@@ -78,9 +78,6 @@ export async function POST(request: Request) {
   const cpfInput = typeof payload.cpf === "string" ? payload.cpf : "";
   const cpf = cpfInput.replace(/\D/g, "");
   if (!validCpf(cpf)) return NextResponse.json({ error: "CPF inválido." }, { status: 400 });
-  if (payload.consent !== true) {
-    return NextResponse.json({ error: "O consentimento é necessário para realizar a consulta." }, { status: 400 });
-  }
 
   const providerUrl = process.env.CPF_PROVIDER_URL || "https://api.cpfcnpj.com.br/{token}/{package}/{cpf}";
   const providerToken = process.env.CPF_PROVIDER_TOKEN;

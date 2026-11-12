@@ -122,105 +122,6 @@ a {
   font-size: 10px;
 }
 
-.verification-stage {
-  overflow: hidden;
-}
-
-.verification-background {
-  opacity: 0.58;
-}
-
-.verification-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: rgb(7 20 32 / 58%);
-}
-
-.verification-dialog {
-  width: min(100%, 290px);
-  padding: 19px 16px 14px;
-  border-radius: 8px;
-  background: #fff;
-  text-align: center;
-  box-shadow: 0 12px 32px rgb(0 0 0 / 20%);
-}
-
-.verification-eyebrow {
-  margin: 0 0 9px;
-  color: #188a55;
-  font-size: 8px;
-  font-weight: 700;
-}
-
-.verification-dialog h1 {
-  margin: 0;
-  color: #18263a;
-  font-size: 16px;
-}
-
-.verification-prompt {
-  margin: 8px 0 16px;
-  color: #748093;
-  font-size: 10px;
-}
-
-.verification-dialog form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  flex-wrap: wrap;
-}
-
-.verification-dialog form label {
-  color: #172f57;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.verification-dialog form input {
-  width: 44px;
-  height: 38px;
-  border: 1px solid #21a35f;
-  border-radius: 8px;
-  text-align: center;
-  font-size: 16px;
-}
-
-.verification-dialog form button {
-  width: 100%;
-  min-height: 38px;
-  margin-top: 4px;
-  border: 0;
-  border-radius: 8px;
-  background: #f7a51b;
-  color: #192334;
-  cursor: pointer;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.verification-dialog form button:hover {
-  background: #e9950b;
-}
-
-.verification-error {
-  margin: 9px 0 0;
-  color: #a12727;
-  font-size: 11px;
-}
-
-.verification-disclaimer {
-  margin: 10px 0 0;
-  color: #778191;
-  font-size: 8px;
-  line-height: 1.4;
-}
-
 .site-header {
   position: relative;
   z-index: 1;
@@ -413,7 +314,7 @@ a {
   margin-top: 26px;
 }
 
-.consultation-card form > label:not(.consent) {
+.consultation-card form > label {
   color: #172f57;
   font-size: 14px;
   font-weight: 700;
@@ -435,21 +336,6 @@ a {
   border-color: #174ab8;
 }
 
-.consent {
-  display: flex;
-  align-items: flex-start;
-  gap: 9px;
-  color: #586b83;
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-.consent input {
-  flex: 0 0 auto;
-  margin: 2px 0 0;
-}
-
-.consent a,
 .site-footer nav a {
   color: #174ab8;
 }
@@ -640,6 +526,18 @@ a {
   }
 }
 
+@media (max-width: 860px) {
+  .cpf-landing-section {
+    padding: 38px 24px;
+  }
+
+  .cpf-landing-content {
+    width: min(100%, 555px);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+}
+
 @media (max-width: 520px) {
   .intro-stage {
     min-height: calc(100vh - 76px);
@@ -705,5 +603,526 @@ a {
 
   .consultation-card {
     padding: 26px 21px;
+  }
+}
+
+.offers-page {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  flex-direction: column;
+  background: #e90070;
+}
+
+.offers-stage {
+  position: relative;
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 18px 34px;
+  background: #e90070;
+}
+
+.offers-visual {
+  position: relative;
+  width: min(100%, 440px);
+  height: 270px;
+  flex: 0 0 270px;
+  margin-bottom: -48px;
+  z-index: 0;
+}
+
+.offers-attendant {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  width: min(100%, 340px);
+  height: 298px;
+  object-fit: contain;
+  object-position: center bottom;
+  transform: translateX(-50%);
+}
+
+.offers-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 442px);
+  padding: 37px 21px 23px;
+  border-radius: 16px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 14px 28px rgb(112 0 51 / 15%);
+}
+
+.offers-card h1 {
+  margin: 0 0 13px;
+  color: #e90070;
+  font-size: clamp(20px, 5vw, 24px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.offers-card p {
+  max-width: 350px;
+  margin: 0 auto 20px;
+  color: #737373;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.offers-button {
+  display: flex;
+  width: fit-content;
+  min-height: 46px;
+  margin-inline: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(100deg, #ed0075, #ff3f9e);
+  box-shadow: 0 8px 18px rgb(233 0 112 / 28%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.offers-button:hover {
+  background: linear-gradient(100deg, #cf0064, #ec2383);
+}
+
+.offers-footer {
+  padding: 13px 14px 17px;
+  background: #e90070;
+  color: rgb(255 255 255 / 82%);
+  text-align: center;
+}
+
+.offers-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 17px;
+  font-size: 10px;
+}
+
+.offers-footer nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.offers-loading-page {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  height: 100vh;
+  height: 100svh;
+  place-items: center;
+  overflow: hidden;
+  background: #e90070;
+}
+
+.offers-loading-content {
+  display: flex;
+  width: min(100% - 32px, 438px);
+  flex-direction: column;
+  align-items: center;
+}
+
+.offers-loading-attendant {
+  display: block;
+  width: min(100%, 374px);
+  height: auto;
+  margin-bottom: -48px;
+  object-fit: contain;
+  position: relative;
+  z-index: 0;
+}
+
+.offers-loading-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  min-height: 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 38px;
+  border-radius: 17px;
+  background: #fff;
+}
+
+.offers-progress-track {
+  width: 100%;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #eee;
+}
+
+.offers-progress-fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ed0075, #ff3f9e);
+  animation: offers-progress 1.8s ease-out forwards;
+}
+
+.offers-loading-card p {
+  margin: 10px 0 0;
+  color: #858585;
+  font-size: 11px;
+}
+
+@keyframes offers-progress {
+  to {
+    width: 94%;
+  }
+}
+
+.cpf-entry-card {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cpf-entry-card form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  margin-top: 0;
+  padding-top: 24px;
+  border-top: 1px solid #e1e4ea;
+}
+
+.cpf-entry-card input:not([type="checkbox"]) {
+  min-width: 0;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid #555c68;
+  border-radius: 8px;
+  color: #161c2b;
+  font-size: 14px;
+}
+
+.cpf-entry-card input:not([type="checkbox"])::placeholder {
+  color: #727987;
+}
+
+.cpf-entry-card input:focus-visible {
+  outline: 3px solid rgb(0 77 232 / 18%);
+  border-color: #004de8;
+}
+
+.cpf-entry-card form > button {
+  min-height: 48px;
+  padding: 0 19px;
+  border-radius: 999px;
+  background: #004de8;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.cpf-entry-card form > button:hover:not(:disabled) {
+  background: #003fc2;
+}
+
+.cpf-entry-card form > button:disabled {
+  background: #004de8;
+  opacity: 0.7;
+}
+
+.cpf-entry-card .message,
+.cpf-entry-card .result {
+  margin: 12px 0 0;
+  color: #5e6675;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.cpf-entry-card .cpf-confirmation {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid #dfe6f1;
+  border-left: 0;
+  border-radius: 12px;
+  background: #f7f9fd;
+}
+
+.cpf-confirmation h2 {
+  margin: 0 0 5px;
+  color: #172f57;
+  font-size: 17px;
+}
+
+.cpf-confirmation > p {
+  margin: 0;
+}
+
+.cpf-confirmation dl {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 0;
+}
+
+.cpf-confirmation dl div {
+  display: grid;
+  gap: 3px;
+}
+
+.cpf-confirmation dt {
+  color: #647995;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.cpf-confirmation dd {
+  margin: 0;
+  color: #172f57;
+  font-size: 15px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.cpf-entry-card .confirm-button {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.cpf-entry-card .cpf-correct-button {
+  width: 100%;
+  min-height: 40px;
+  margin-top: 7px;
+  background: transparent;
+  color: #174ab8;
+  font-size: 12px;
+}
+
+.cpf-entry-card .cpf-correct-button:hover:not(:disabled) {
+  background: transparent;
+  color: #123d9a;
+  text-decoration: underline;
+}
+
+.cpf-landing-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #fff;
+  color: #111820;
+}
+
+.cpf-landing-section {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  align-items: center;
+  padding: 44px 4.2vw;
+}
+
+.cpf-landing-content {
+  display: grid;
+  width: min(100%, 1220px);
+  grid-template-columns: minmax(0, 496px) minmax(0, 555px);
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(36px, 6vw, 80px);
+  margin: 0 auto;
+}
+
+.cpf-landing-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #e1e4ea;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.cpf-landing-badge {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 26px;
+  padding: 0 15px;
+  border-radius: 999px;
+  background: #e3fff0;
+  color: #111820;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cpf-landing-badge svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cpf-landing-card h1 {
+  margin: 0 0 25px;
+  color: #111820;
+  font-size: clamp(28px, 2.55vw, 34px);
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.cpf-landing-card h1 span {
+  color: #064be8;
+}
+
+.cpf-landing-description {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0 0 25px;
+}
+
+.cpf-landing-description svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  margin-top: 2px;
+  stroke: #20252b;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cpf-landing-description p {
+  margin: 0;
+  color: #3e4650;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cpf-landing-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cpf-landing-footer {
+  padding: 24px 18px 28px;
+  background: #071b36;
+  color: #fff;
+  text-align: center;
+}
+
+.cpf-landing-footer p {
+  margin: 0 0 13px;
+  color: rgb(255 255 255 / 80%);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cpf-landing-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 18px;
+  font-size: 11px;
+}
+
+.cpf-landing-footer nav a {
+  color: #cbd9ed;
+  text-decoration: none;
+}
+
+@media (max-width: 520px) {
+  .offers-stage {
+    padding: 18px 16px 27px;
+  }
+
+  .offers-visual {
+    height: 235px;
+    flex-basis: 235px;
+    margin-bottom: -38px;
+  }
+
+  .offers-attendant {
+    width: min(100%, 310px);
+    height: 258px;
+  }
+
+  .offers-card {
+    padding: 31px 18px 21px;
+  }
+
+  .offers-loading-content {
+    width: min(100% - 36px, 438px);
+  }
+
+  .offers-loading-attendant {
+    width: min(100%, 330px);
+    margin-bottom: -38px;
+  }
+
+  .offers-loading-card {
+    min-height: 180px;
+    padding: 28px 30px;
+  }
+
+  .cpf-landing-section {
+    padding: 26px 18px;
+  }
+
+  .cpf-landing-content {
+    gap: 24px;
+  }
+
+  .cpf-landing-card {
+    padding: 22px 18px;
+  }
+
+  .cpf-landing-badge {
+    min-height: 34px;
+    margin-bottom: 20px;
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  .cpf-landing-card h1 {
+    margin-bottom: 20px;
+    font-size: clamp(26px, 8vw, 32px);
+    line-height: 1.25;
+  }
+
+  .cpf-landing-description {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .cpf-landing-description p {
+    font-size: 14px;
+  }
+
+  .cpf-entry-card form {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding-top: 18px;
+  }
+
+  .cpf-entry-card form > button {
+    width: 100%;
+  }
+
+  .cpf-landing-footer {
+    padding: 20px 14px 25px;
   }
 }

@@ -1044,6 +1044,24 @@ a {
   text-decoration: none;
 }
 
+@media (max-width: 900px) {
+  .cpf-landing-content {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 28px;
+  }
+
+  .cpf-landing-card,
+  .cpf-landing-image {
+    width: min(100%, 560px);
+  }
+
+  .cpf-landing-image {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 520px) {
   .offers-stage {
     padding: 18px 16px 27px;
